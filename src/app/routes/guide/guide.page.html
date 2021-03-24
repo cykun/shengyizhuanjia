@@ -1,0 +1,35 @@
+<ion-header class="ion-no-border fixed-top">
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-button color="primary" [hidden]="!showSkip" (click)="onSkip()"> 跳过 </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-slides pager="false" #slides (ionSlideWillChange)="onSlideWillChange($event)">
+    <ion-slide>
+      <img src="/assets/img/splsh_one.png" alt="splsh_one">
+    </ion-slide>
+    <ion-slide>
+      <img src="/assets/img/splsh_two.png" alt="splsh_two">
+    </ion-slide>
+    <ion-slide>
+      <img src="/assets/img/splsh_three.png" alt="splsh_three">
+      <ion-grid class="fixed-bottom">
+        <ion-row>
+          <ion-col size="6">
+            <ion-button color="primary" expand="block" fill="outline" routerLink="/passport/login">
+              登录
+            </ion-button>
+          </ion-col>
+          <ion-col size="6">
+            <ion-button color="primary" expand="block" color="primary" routerLink="/passport/signup">
+              注册
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-slide>
+  </ion-slides>
+</ion-content>

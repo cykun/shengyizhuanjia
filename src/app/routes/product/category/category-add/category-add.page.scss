@@ -1,0 +1,14 @@
+ion-item ion-button {
+    width: 100%;
+    height: 42px;
+    margin-left: 0;
+    margin-right: 0px;
+}
+
+ion-list {
+    background: transparent;
+}
+
+ion-item[name]+ion-item {
+    margin-top: 0;
+}

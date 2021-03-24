@@ -1,0 +1,40 @@
+ion-toolbar {
+    --background: transparent;
+    --border-color: transparent;
+}
+
+ion-slides {
+    height: 100%;
+    ion-slide {
+        align-items: flex-start;
+        justify-content: flex-start;
+    
+        img {
+            margin: 0 auto;
+        }
+    }
+}
+
+.ion-color-red {
+    --ion-color-base: #F26340;
+    --ion-color-base-rgb: 105, 187, 123;
+    --ion-color-contrast: #ffffff;
+    --ion-color-contrast-rgb: 255, 255, 255;
+    --ion-color-shade: #5ca56c;
+    --ion-color-tint: #78c288;
+    --border-radius: 2px;
+}
+
+.fixed-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.fixed-bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+}

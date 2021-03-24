@@ -1,0 +1,43 @@
+ion-row:first-child {
+    background-color: #F6F5FA;
+}
+
+.less-equal {
+    color: var(--ion-color-success, #10dc60);
+}
+
+.greater {
+    color: var(--ion-color-danger, #f04141);
+}
+
+.quick-action-item {
+    height: 25vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ececec;
+}
+
+a {
+    text-decoration: none;
+    color: #000000;
+}
+
+a * {
+    text-align: center;
+}
+
+a img {
+    width: 40%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+a div {
+    margin-top: 16px;
+}
+
+p * {
+    vertical-align: middle;
+}

@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button text="返回"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{title}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form (ngSubmit)="save()" #editShopForm="ngForm" novalidate>
+    <ion-list>
+      <ion-item lines="none">
+        <div class="border full-width ion-padding-horizontal">
+          <ion-input name="{{property}}" type="text" placeholder="{{title}}" required [(ngModel)]="value"></ion-input>
+        </div>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-button type="submit" expand="full" class="ion-margin-top" color="primary" [disabled]="editShopForm.invalid">
+          确认
+        </ion-button>
+      </ion-item>
+    </ion-list>
+  </form>
+</ion-content>

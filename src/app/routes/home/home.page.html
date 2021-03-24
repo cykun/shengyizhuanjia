@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      首页
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon slot="icon-only" name="calendar"></ion-icon>
+      </ion-button>
+      <ion-button>
+        <ion-icon slot="icon-only" name="notifications"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <img src="/assets/img/androidbanner.png" alt="首页图片" style="width: 100%; height: auto;">
+  <ion-grid class="ion-no-padding">
+    <ion-row class="ion-padding-horizontal">
+      <ion-col *ngFor="let s of sales" size="4">
+        <h6>{{s.title}}</h6>
+        <h4><span>{{s.current | number:'1.2-2'}}RMB</span></h4>
+        <p>
+          {{s.content}}
+          <span [ngClass]="{'less-equal':s.current - s.previous <= 0,'greater':s.current - s.previous > 0}">
+            {{s.current - s.previous | number:'1.2-2'}}
+          </span>
+          <ng-container [ngSwitch]="minus(s.current, s.previous)">
+            <ion-icon name="arrow-up-sharp" color="danger" *ngSwitchCase="1"></ion-icon>
+            <ion-icon name="remove-sharp" color="success" *ngSwitchCase="0"></ion-icon>
+            <ion-icon name="arrow-down-sharp" color="success" *ngSwitchCase="-1"></ion-icon>
+          </ng-container>
+        </p>
+      </ion-col>
+    </ion-row>
+    <ion-row class="quick-actions" *ngFor="let quick of quicks">
+      <ion-col class="quick-action-item" *ngFor="let qItem of quick">
+        <a class="shortcut" routerLink={{qItem.href}} *ngIf="!qItem.disable">
+          <img src="assets/img/{{qItem.name}}.png" alt="">
+          <div>{{qItem.text}}</div>
+        </a>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <div style="height: 80px; position: relative;">
+    <zxk-copyright bottom="20px"></zxk-copyright>
+  </div>
+</ion-content>

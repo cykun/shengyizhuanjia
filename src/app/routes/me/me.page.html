@@ -1,0 +1,32 @@
+<ion-header class="ion-no-border" color="primary">
+  <ion-toolbar color="primary">
+    <ion-title>店主</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="gotoSetting()">
+        <ion-icon name="settings"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list class="ion-no-padding">
+    <ion-item color="primary">
+      <ion-label>
+        <ion-text>
+          <h2>{{shopName}}</h2>
+        </ion-text>
+        <p>{{phone}}</p>
+      </ion-label>
+      <ion-text slot="end">
+        高级版
+      </ion-text>
+    </ion-item>
+    <ion-item [routerDirection]="'root'" [routerLink]="[p.url]" *ngFor="let p of appPages" detail>
+      <ion-icon slot="start" [name]="p.icon"></ion-icon>
+      <ion-label>
+        {{p.title}}
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
